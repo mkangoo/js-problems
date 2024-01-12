@@ -16,7 +16,20 @@
  * @returns {(number|undefined)}
  */
 function getWinner(points) {
-    return undefined;
+    let teamOneScore = 0;
+    let teamTwoScore = 0;
+
+    points.forEach((element) => {
+        const [teamOne, teamTwo] = element.split("-").map(Number);
+        teamOneScore += teamOne;
+        teamTwoScore += teamTwo;
+    });
+
+    if (teamOneScore === teamTwoScore) {
+        return undefined;
+    } else {
+        return teamOneScore > teamTwoScore ? 1 : 2;
+    }
 }
 
 module.exports = getWinner;
