@@ -19,7 +19,9 @@
  * второй элемент – Катей, третий – Сережей
  */
 function computeOrizurus(total) {
-    return undefined;
+    const kate = (total / 3) * 2;
+    const boys = (total - kate) / 2;
+    return [boys, kate, boys];
 }
 
 module.exports = computeOrizurus;
