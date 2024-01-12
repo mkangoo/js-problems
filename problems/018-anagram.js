@@ -15,7 +15,10 @@
  * @returns {boolean}
  */
 function anagram(x, y) {
-    return undefined;
+    if (x === "" || y === "") return false;
+    const firstAnagram = x.toLowerCase().split("").sort().join("");
+    const secondAnagram = y.toLowerCase().split("").sort().join("");
+    return firstAnagram === secondAnagram;
 }
 
 module.exports = anagram;
