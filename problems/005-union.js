@@ -13,7 +13,11 @@
  * @returns {number[]}
  */
 function union(a, b) {
-    return undefined;
+    const commonElements = a.filter((element) => b.includes(element));
+
+    const uniqueElements = [...new Set(commonElements)];
+
+    return uniqueElements.sort((a, b) => a - b);
 }
 
 module.exports = union;
