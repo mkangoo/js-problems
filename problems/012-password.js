@@ -18,7 +18,12 @@
  * @returns {boolean}
  */
 function validatePassword(password) {
-    return undefined;
+    if (password.length < 7) return false;
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasNumber = /\d/.test(password);
+
+    return hasLowerCase && hasUpperCase && hasNumber;
 }
 
 module.exports = validatePassword;
