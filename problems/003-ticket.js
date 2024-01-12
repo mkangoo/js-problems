@@ -14,7 +14,14 @@
  * @returns {boolean}
  */
 function checkTicket(number) {
-    return undefined;
+    if (number.length !== 6) {
+        return false;
+    }
+    const digits = number.split("").map(Number);
+    const firstSum = digits.slice(0, 3).reduce((acc, val) => acc + val, 0);
+    const secondSum = digits.slice(3).reduce((acc, val) => acc + val, 0);
+
+    return firstSum === secondSum;
 }
 
 module.exports = checkTicket;
